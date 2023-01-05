@@ -5,6 +5,22 @@ body {
     gap: 16px;
 }
 
+.reset-button {
+    width: 100px;
+    height: 30px;
+    background-color: #3882F6;
+    color: #F9FAF8;
+    font-weight: bold;
+    border-radius: 53px;
+    border: 1px solid #3882F6;
+    font-size: 15px;
+}
+
+.button-hovering {
+    transform: scale(1.2);
+    border-color: blue;
+}
+
 .square-container {
     width: 640px;
     height: 640px;

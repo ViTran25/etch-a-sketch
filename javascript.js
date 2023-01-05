@@ -18,7 +18,8 @@ function createGrid(numberOfSquares) {
     }
 };
 
-createGrid(16);
+let numberOfSquares = 16;
+createGrid(numberOfSquares);
 
 let isDrawing = false;
 //Mouse hovering event but only when the mouse is being depressed and not being released
@@ -34,4 +35,28 @@ function createHoverEffect(div) {
     div.addEventListener('mouseup', function(e) {
         if (isDrawing) isDrawing = false;
     });
+}
+
+const resetButton = document.querySelector('.reset-button');
+// Mouse-hovering effect on the reset button
+resetButton.addEventListener('mousemove', function(e){
+    resetButton.classList.add('button-hovering');
+});
+resetButton.addEventListener('mouseleave', function(e){
+    resetButton.classList.remove('button-hovering');
+});
+
+// Reset the grid when click on reset button
+resetButton.addEventListener('click', function(e) {
+    numberOfSquares = prompt('Enter a new number of squares per side\n(Default: 16)');
+    // Delete all the div squares inside the container
+    removeGrid();   
+    // Create the new grid based on the new number of squares
+    createGrid(numberOfSquares);
+});
+
+function removeGrid() {
+    while (divContainer.firstChild) {
+        divContainer.removeChild(divContainer.firstChild);
+    }
 }
