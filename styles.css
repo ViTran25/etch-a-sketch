@@ -36,7 +36,7 @@ body {
 }
 
 .square-container > .row {
-    background-color: greenyellow;
+    background-color: lightyellow;
     flex: 1;
     display: flex;
 }

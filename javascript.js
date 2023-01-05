@@ -30,12 +30,20 @@ function createHoverEffect(div) {
     });
     div.addEventListener('mousemove', function(e) {
         if (isDrawing) {
-            div.style.backgroundColor = 'brown';
+            div.style.backgroundColor = getRandomColor();
         }
-    });
+    }, {once: true});
     div.addEventListener('mouseup', function(e) {
         if (isDrawing) isDrawing = false;
     });
+}
+
+function getRandomColor() {
+    const x = Math.floor(Math.random() * 256);
+    const y = Math.floor(Math.random() * 256);
+    const z = Math.floor(Math.random() * 256);
+    const randomColor = `rgb(${x}, ${y}, ${z})`;
+    return randomColor;
 }
 
 // Reset button
