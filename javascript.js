@@ -18,6 +18,7 @@ function createGrid(numberOfSquares) {
     }
 };
 
+// Grid's initial creation on the first page-loading
 let numberOfSquares = 16;
 createGrid(numberOfSquares);
 
@@ -37,14 +38,18 @@ function createHoverEffect(div) {
     });
 }
 
+// Reset button
 const resetButton = document.querySelector('.reset-button');
 // Mouse-hovering effect on the reset button
-resetButton.addEventListener('mousemove', function(e){
-    resetButton.classList.add('button-hovering');
-});
-resetButton.addEventListener('mouseleave', function(e){
-    resetButton.classList.remove('button-hovering');
-});
+function createButtonHoveringEffect(button) {
+    button.addEventListener('mousemove', function(e){
+        button.classList.add('button-hovering');
+    });
+    button.addEventListener('mouseleave', function(e){
+        button.classList.remove('button-hovering');
+    });
+}
+createButtonHoveringEffect(resetButton);
 
 // Reset the grid when click on reset button
 resetButton.addEventListener('click', function(e) {
