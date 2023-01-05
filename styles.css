@@ -5,7 +5,12 @@ body {
     gap: 16px;
 }
 
-.reset-button {
+.button-container {
+    display: flex;
+    gap: 16px;
+}
+
+.button-container > button {
     width: 100px;
     height: 30px;
     background-color: #3882F6;
@@ -39,4 +44,8 @@ body {
 .row > .square {
     border: 1px solid black;
     flex: 1;
+}
+
+.row > .square.toggled {
+    border: 0px;
 }

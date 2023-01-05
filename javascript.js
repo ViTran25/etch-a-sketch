@@ -65,3 +65,11 @@ function removeGrid() {
         divContainer.removeChild(divContainer.firstChild);
     }
 }
+
+// Toggle the grid lines
+const gridLineButton = document.querySelector('.grid-lines-toggle');
+createButtonHoveringEffect(gridLineButton);
+gridLineButton.addEventListener('click', function(e) {
+    const squares = document.querySelectorAll('.row > .square');
+    squares.forEach(square => square.classList.toggle('toggled'));
+})
