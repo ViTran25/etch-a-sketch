@@ -54,10 +54,15 @@ createButtonHoveringEffect(resetButton);
 // Reset the grid when click on reset button
 resetButton.addEventListener('click', function(e) {
     numberOfSquares = prompt('Enter a new number of squares per side\n(Default: 16)');
-    // Delete all the div squares inside the container
-    removeGrid();   
-    // Create the new grid based on the new number of squares
-    createGrid(numberOfSquares);
+    while(numberOfSquares > 100) {
+        numberOfSquares = prompt('New number cannot exceed 100!\nEnter again');
+    }
+    if (numberOfSquares) {
+        // Delete all the div squares inside the container
+        removeGrid();   
+        // Create the new grid based on the new number of squares
+        createGrid(numberOfSquares);
+    }
 });
 
 function removeGrid() {
